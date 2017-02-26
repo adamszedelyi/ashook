@@ -17,31 +17,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6DCD89701E63098800F620D2 /* PBXContainerItemProxy */ = {
+		6D7DA6831E639CCC00C587EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6DCD896B1E63098700F620D2 /* ASHookIt.xcodeproj */;
+			containerPortal = 6DCD896B1E63098700F620D2 /* ASHook.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6DCD892B1E63091F00F620D2;
-			remoteInfo = ASHookIt;
+			remoteInfo = ASHook;
 		};
-		6DCD89721E63098800F620D2 /* PBXContainerItemProxy */ = {
+		6D7DA6851E639CCC00C587EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6DCD896B1E63098700F620D2 /* ASHookIt.xcodeproj */;
+			containerPortal = 6DCD896B1E63098700F620D2 /* ASHook.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6DCD89341E63091F00F620D2;
-			remoteInfo = ASHookItTests;
+			remoteInfo = ASHookTests;
 		};
-		6DCD89781E6309DA00F620D2 /* PBXContainerItemProxy */ = {
+		6D7DA6871E639D3400C587EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6DCD896B1E63098700F620D2 /* ASHookIt.xcodeproj */;
+			containerPortal = 6DCD896B1E63098700F620D2 /* ASHook.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 6DCD892A1E63091F00F620D2;
-			remoteInfo = ASHookIt;
+			remoteInfo = ASHook;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6DCD894E1E63097200F620D2 /* ASHookItDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASHookItDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DCD894E1E63097200F620D2 /* ASHookDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASHookDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCD89521E63097200F620D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6DCD89541E63097200F620D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6DCD89551E63097200F620D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		6DCD89601E63097200F620D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DCD89631E63097200F620D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DCD89651E63097200F620D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6DCD896B1E63098700F620D2 /* ASHookIt.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ASHookIt.xcodeproj; path = ../ASHookIt.xcodeproj; sourceTree = "<group>"; };
+		6DCD896B1E63098700F620D2 /* ASHook.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ASHook.xcodeproj; path = ../ASHook.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +67,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D7DA67F1E639CCB00C587EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D7DA6841E639CCC00C587EF /* ASHook.framework */,
+				6D7DA6861E639CCC00C587EF /* ASHookTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		6DCD89451E63097200F620D2 = {
 			isa = PBXGroup;
 			children = (
-				6DCD896B1E63098700F620D2 /* ASHookIt.xcodeproj */,
-				6DCD89501E63097200F620D2 /* ASHookItDemo */,
+				6DCD896B1E63098700F620D2 /* ASHook.xcodeproj */,
+				6DCD89501E63097200F620D2 /* ASHookDemo */,
 				6DCD894F1E63097200F620D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,12 +88,12 @@
 		6DCD894F1E63097200F620D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6DCD894E1E63097200F620D2 /* ASHookItDemo.app */,
+				6DCD894E1E63097200F620D2 /* ASHookDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6DCD89501E63097200F620D2 /* ASHookItDemo */ = {
+		6DCD89501E63097200F620D2 /* ASHookDemo */ = {
 			isa = PBXGroup;
 			children = (
 				6DCD89541E63097200F620D2 /* AppDelegate.h */,
@@ -99,7 +108,7 @@
 				6DCD89651E63097200F620D2 /* Info.plist */,
 				6DCD89511E63097200F620D2 /* Supporting Files */,
 			);
-			path = ASHookItDemo;
+			path = ASHookDemo;
 			sourceTree = "<group>";
 		};
 		6DCD89511E63097200F620D2 /* Supporting Files */ = {
@@ -110,21 +119,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6DCD896C1E63098700F620D2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6DCD89711E63098800F620D2 /* ASHookIt.framework */,
-				6DCD89731E63098800F620D2 /* ASHookItTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6DCD894D1E63097200F620D2 /* ASHookItDemo */ = {
+		6DCD894D1E63097200F620D2 /* ASHookDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6DCD89681E63097200F620D2 /* Build configuration list for PBXNativeTarget "ASHookItDemo" */;
+			buildConfigurationList = 6DCD89681E63097200F620D2 /* Build configuration list for PBXNativeTarget "ASHookDemo" */;
 			buildPhases = (
 				6DCD894A1E63097200F620D2 /* Sources */,
 				6DCD894B1E63097200F620D2 /* Frameworks */,
@@ -133,11 +133,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				6DCD89791E6309DA00F620D2 /* PBXTargetDependency */,
+				6D7DA6881E639D3400C587EF /* PBXTargetDependency */,
 			);
-			name = ASHookItDemo;
+			name = ASHookDemo;
 			productName = ASHookItDemo;
-			productReference = 6DCD894E1E63097200F620D2 /* ASHookItDemo.app */;
+			productReference = 6DCD894E1E63097200F620D2 /* ASHookDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -155,7 +155,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6DCD89491E63097200F620D2 /* Build configuration list for PBXProject "ASHookItDemo" */;
+			buildConfigurationList = 6DCD89491E63097200F620D2 /* Build configuration list for PBXProject "ASHookDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -168,30 +168,30 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 6DCD896C1E63098700F620D2 /* Products */;
-					ProjectRef = 6DCD896B1E63098700F620D2 /* ASHookIt.xcodeproj */;
+					ProductGroup = 6D7DA67F1E639CCB00C587EF /* Products */;
+					ProjectRef = 6DCD896B1E63098700F620D2 /* ASHook.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				6DCD894D1E63097200F620D2 /* ASHookItDemo */,
+				6DCD894D1E63097200F620D2 /* ASHookDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6DCD89711E63098800F620D2 /* ASHookIt.framework */ = {
+		6D7DA6841E639CCC00C587EF /* ASHook.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = ASHookIt.framework;
-			remoteRef = 6DCD89701E63098800F620D2 /* PBXContainerItemProxy */;
+			path = ASHook.framework;
+			remoteRef = 6D7DA6831E639CCC00C587EF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6DCD89731E63098800F620D2 /* ASHookItTests.xctest */ = {
+		6D7DA6861E639CCC00C587EF /* ASHookTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = ASHookItTests.xctest;
-			remoteRef = 6DCD89721E63098800F620D2 /* PBXContainerItemProxy */;
+			path = ASHookTests.xctest;
+			remoteRef = 6D7DA6851E639CCC00C587EF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -224,10 +224,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6DCD89791E6309DA00F620D2 /* PBXTargetDependency */ = {
+		6D7DA6881E639D3400C587EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ASHookIt;
-			targetProxy = 6DCD89781E6309DA00F620D2 /* PBXContainerItemProxy */;
+			name = ASHook;
+			targetProxy = 6D7DA6871E639D3400C587EF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -345,9 +345,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ASHookItDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ASHookDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.adamszedelyi.ASHookItDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamszedelyi.ASHookDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -356,9 +356,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ASHookItDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ASHookDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.adamszedelyi.ASHookItDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamszedelyi.ASHookDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -366,7 +366,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6DCD89491E63097200F620D2 /* Build configuration list for PBXProject "ASHookItDemo" */ = {
+		6DCD89491E63097200F620D2 /* Build configuration list for PBXProject "ASHookDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6DCD89661E63097200F620D2 /* Debug */,
@@ -375,7 +375,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6DCD89681E63097200F620D2 /* Build configuration list for PBXNativeTarget "ASHookItDemo" */ = {
+		6DCD89681E63097200F620D2 /* Build configuration list for PBXNativeTarget "ASHookDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6DCD89691E63097200F620D2 /* Debug */,

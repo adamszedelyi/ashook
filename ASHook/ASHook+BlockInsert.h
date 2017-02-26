@@ -1,12 +1,12 @@
 //
 //  ASHook+BlockInsert.h
-//  ASHookIt
+//  ASHook
 //
 //  Created by Adam Szedelyi on 2017. 02. 26..
 //  Copyright © 2017. Adam Szedelyi. All rights reserved.
 //
 
-#import <ASHookIt/ASHookIt.h>
+#import <ASHook/ASHook.h>
 
 @interface ASHook (BlockInsert)
 

@@ -1,6 +1,6 @@
 //
-//  ASHookItTests.m
-//  ASHookItTests
+//  ASHookTests.m
+//  ASHookTests
 //
 //  Created by Adam Szedelyi on 2017. 02. 26..
 //  Copyright © 2017. Adam Szedelyi. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface ASHookItTests : XCTestCase
+@interface ASHookTests : XCTestCase
 
 @end
 
-@implementation ASHookItTests
+@implementation ASHookTests
 
 - (void)setUp {
     [super setUp];

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6DCD89351E63091F00F620D2 /* ASHookIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCD892B1E63091F00F620D2 /* ASHookIt.framework */; };
-		6DCD893A1E63091F00F620D2 /* ASHookItTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD89391E63091F00F620D2 /* ASHookItTests.m */; };
-		6DCD893C1E63091F00F620D2 /* ASHookIt.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCD892E1E63091F00F620D2 /* ASHookIt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D7DA68D1E63A18F00C587EF /* ASHookBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D7DA68B1E63A18F00C587EF /* ASHookBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D7DA68E1E63A18F00C587EF /* ASHookBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7DA68C1E63A18F00C587EF /* ASHookBase.m */; };
+		6DCD89351E63091F00F620D2 /* ASHook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCD892B1E63091F00F620D2 /* ASHook.framework */; };
+		6DCD893A1E63091F00F620D2 /* ASHookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD89391E63091F00F620D2 /* ASHookTests.m */; };
 		6DCD89821E63676500F620D2 /* ASHook.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCD89801E63676500F620D2 /* ASHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6DCD89831E63676500F620D2 /* ASHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD89811E63676500F620D2 /* ASHook.m */; };
 		6DCD89861E63678B00F620D2 /* ASHook+MethodSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCD89841E63678B00F620D2 /* ASHook+MethodSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DCD89871E63678B00F620D2 /* ASHook+MethodSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD89851E63678B00F620D2 /* ASHook+MethodSwizzler.m */; };
 		6DCD898A1E636A2000F620D2 /* ASHook+BlockInsert.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCD89881E636A2000F620D2 /* ASHook+BlockInsert.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,14 +29,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6DCD892B1E63091F00F620D2 /* ASHookIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASHookIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DCD892E1E63091F00F620D2 /* ASHookIt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHookIt.h; sourceTree = "<group>"; };
+		6D7DA68B1E63A18F00C587EF /* ASHookBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHookBase.h; sourceTree = "<group>"; };
+		6D7DA68C1E63A18F00C587EF /* ASHookBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHookBase.m; sourceTree = "<group>"; };
+		6DCD892B1E63091F00F620D2 /* ASHook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASHook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCD892F1E63091F00F620D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6DCD89341E63091F00F620D2 /* ASHookItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASHookItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DCD89391E63091F00F620D2 /* ASHookItTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHookItTests.m; sourceTree = "<group>"; };
+		6DCD89341E63091F00F620D2 /* ASHookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASHookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DCD89391E63091F00F620D2 /* ASHookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHookTests.m; sourceTree = "<group>"; };
 		6DCD893B1E63091F00F620D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DCD89801E63676500F620D2 /* ASHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHook.h; sourceTree = "<group>"; };
-		6DCD89811E63676500F620D2 /* ASHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHook.m; sourceTree = "<group>"; };
 		6DCD89841E63678B00F620D2 /* ASHook+MethodSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASHook+MethodSwizzler.h"; sourceTree = "<group>"; };
 		6DCD89851E63678B00F620D2 /* ASHook+MethodSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASHook+MethodSwizzler.m"; sourceTree = "<group>"; };
 		6DCD89881E636A2000F620D2 /* ASHook+BlockInsert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASHook+BlockInsert.h"; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DCD89351E63091F00F620D2 /* ASHookIt.framework in Frameworks */,
+				6DCD89351E63091F00F620D2 /* ASHook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,8 +65,8 @@
 		6DCD89211E63091F00F620D2 = {
 			isa = PBXGroup;
 			children = (
-				6DCD892D1E63091F00F620D2 /* ASHookIt */,
-				6DCD89381E63091F00F620D2 /* ASHookItTests */,
+				6DCD892D1E63091F00F620D2 /* ASHook */,
+				6DCD89381E63091F00F620D2 /* ASHookTests */,
 				6DCD892C1E63091F00F620D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,34 +74,34 @@
 		6DCD892C1E63091F00F620D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6DCD892B1E63091F00F620D2 /* ASHookIt.framework */,
-				6DCD89341E63091F00F620D2 /* ASHookItTests.xctest */,
+				6DCD892B1E63091F00F620D2 /* ASHook.framework */,
+				6DCD89341E63091F00F620D2 /* ASHookTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6DCD892D1E63091F00F620D2 /* ASHookIt */ = {
+		6DCD892D1E63091F00F620D2 /* ASHook */ = {
 			isa = PBXGroup;
 			children = (
-				6DCD892E1E63091F00F620D2 /* ASHookIt.h */,
 				6DCD89801E63676500F620D2 /* ASHook.h */,
-				6DCD89811E63676500F620D2 /* ASHook.m */,
+				6D7DA68B1E63A18F00C587EF /* ASHookBase.h */,
+				6D7DA68C1E63A18F00C587EF /* ASHookBase.m */,
 				6DCD89841E63678B00F620D2 /* ASHook+MethodSwizzler.h */,
 				6DCD89851E63678B00F620D2 /* ASHook+MethodSwizzler.m */,
 				6DCD89881E636A2000F620D2 /* ASHook+BlockInsert.h */,
 				6DCD89891E636A2000F620D2 /* ASHook+BlockInsert.m */,
 				6DCD892F1E63091F00F620D2 /* Info.plist */,
 			);
-			path = ASHookIt;
+			path = ASHook;
 			sourceTree = "<group>";
 		};
-		6DCD89381E63091F00F620D2 /* ASHookItTests */ = {
+		6DCD89381E63091F00F620D2 /* ASHookTests */ = {
 			isa = PBXGroup;
 			children = (
-				6DCD89391E63091F00F620D2 /* ASHookItTests.m */,
+				6DCD89391E63091F00F620D2 /* ASHookTests.m */,
 				6DCD893B1E63091F00F620D2 /* Info.plist */,
 			);
-			path = ASHookItTests;
+			path = ASHookTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,9 +111,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DCD893C1E63091F00F620D2 /* ASHookIt.h in Headers */,
 				6DCD89821E63676500F620D2 /* ASHook.h in Headers */,
 				6DCD89861E63678B00F620D2 /* ASHook+MethodSwizzler.h in Headers */,
+				6D7DA68D1E63A18F00C587EF /* ASHookBase.h in Headers */,
 				6DCD898A1E636A2000F620D2 /* ASHook+BlockInsert.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,9 +121,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6DCD892A1E63091F00F620D2 /* ASHookIt */ = {
+		6DCD892A1E63091F00F620D2 /* ASHook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6DCD893F1E63091F00F620D2 /* Build configuration list for PBXNativeTarget "ASHookIt" */;
+			buildConfigurationList = 6DCD893F1E63091F00F620D2 /* Build configuration list for PBXNativeTarget "ASHook" */;
 			buildPhases = (
 				6DCD89261E63091F00F620D2 /* Sources */,
 				6DCD89271E63091F00F620D2 /* Frameworks */,
@@ -134,14 +134,14 @@
 			);
 			dependencies = (
 			);
-			name = ASHookIt;
+			name = ASHook;
 			productName = ASHookIt;
-			productReference = 6DCD892B1E63091F00F620D2 /* ASHookIt.framework */;
+			productReference = 6DCD892B1E63091F00F620D2 /* ASHook.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6DCD89331E63091F00F620D2 /* ASHookItTests */ = {
+		6DCD89331E63091F00F620D2 /* ASHookTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6DCD89421E63091F00F620D2 /* Build configuration list for PBXNativeTarget "ASHookItTests" */;
+			buildConfigurationList = 6DCD89421E63091F00F620D2 /* Build configuration list for PBXNativeTarget "ASHookTests" */;
 			buildPhases = (
 				6DCD89301E63091F00F620D2 /* Sources */,
 				6DCD89311E63091F00F620D2 /* Frameworks */,
@@ -152,9 +152,9 @@
 			dependencies = (
 				6DCD89371E63091F00F620D2 /* PBXTargetDependency */,
 			);
-			name = ASHookItTests;
+			name = ASHookTests;
 			productName = ASHookItTests;
-			productReference = 6DCD89341E63091F00F620D2 /* ASHookItTests.xctest */;
+			productReference = 6DCD89341E63091F00F620D2 /* ASHookTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -176,7 +176,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6DCD89251E63091F00F620D2 /* Build configuration list for PBXProject "ASHookIt" */;
+			buildConfigurationList = 6DCD89251E63091F00F620D2 /* Build configuration list for PBXProject "ASHook" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -188,8 +188,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6DCD892A1E63091F00F620D2 /* ASHookIt */,
-				6DCD89331E63091F00F620D2 /* ASHookItTests */,
+				6DCD892A1E63091F00F620D2 /* ASHook */,
+				6DCD89331E63091F00F620D2 /* ASHookTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,7 +218,7 @@
 			files = (
 				6DCD89871E63678B00F620D2 /* ASHook+MethodSwizzler.m in Sources */,
 				6DCD898B1E636A2000F620D2 /* ASHook+BlockInsert.m in Sources */,
-				6DCD89831E63676500F620D2 /* ASHook.m in Sources */,
+				6D7DA68E1E63A18F00C587EF /* ASHookBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DCD893A1E63091F00F620D2 /* ASHookItTests.m in Sources */,
+				6DCD893A1E63091F00F620D2 /* ASHookTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +235,7 @@
 /* Begin PBXTargetDependency section */
 		6DCD89371E63091F00F620D2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6DCD892A1E63091F00F620D2 /* ASHookIt */;
+			target = 6DCD892A1E63091F00F620D2 /* ASHook */;
 			targetProxy = 6DCD89361E63091F00F620D2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -345,10 +345,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ASHookIt/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ASHook/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.adamszedelyi.ASHookIt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamszedelyi.ASHook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -362,10 +362,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ASHookIt/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ASHook/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.adamszedelyi.ASHookIt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamszedelyi.ASHook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -374,9 +374,9 @@
 		6DCD89431E63091F00F620D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = ASHookItTests/Info.plist;
+				INFOPLIST_FILE = ASHookTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.adamszedelyi.ASHookItTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamszedelyi.ASHookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -384,9 +384,9 @@
 		6DCD89441E63091F00F620D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = ASHookItTests/Info.plist;
+				INFOPLIST_FILE = ASHookTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.adamszedelyi.ASHookItTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamszedelyi.ASHookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -394,7 +394,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6DCD89251E63091F00F620D2 /* Build configuration list for PBXProject "ASHookIt" */ = {
+		6DCD89251E63091F00F620D2 /* Build configuration list for PBXProject "ASHook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6DCD893D1E63091F00F620D2 /* Debug */,
@@ -403,7 +403,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6DCD893F1E63091F00F620D2 /* Build configuration list for PBXNativeTarget "ASHookIt" */ = {
+		6DCD893F1E63091F00F620D2 /* Build configuration list for PBXNativeTarget "ASHook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6DCD89401E63091F00F620D2 /* Debug */,
@@ -412,7 +412,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6DCD89421E63091F00F620D2 /* Build configuration list for PBXNativeTarget "ASHookItTests" */ = {
+		6DCD89421E63091F00F620D2 /* Build configuration list for PBXNativeTarget "ASHookTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6DCD89431E63091F00F620D2 /* Debug */,
