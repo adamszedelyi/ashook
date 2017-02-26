@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <ASHookIt/ASHook.h>
 #import <ASHookIt/ASHook+MethodSwizzler.h>
+#import <ASHookIt/ASHook+BlockInsert.h>
 
 //! Project version number for ASHookIt.
 FOUNDATION_EXPORT double ASHookItVersionNumber;

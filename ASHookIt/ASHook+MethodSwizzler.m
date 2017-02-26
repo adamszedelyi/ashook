@@ -15,7 +15,7 @@
 #pragma mark - Public methods
 
 + (void)swizzle:(id)targetInstance instanceSelector:(SEL)originalSelector withInstanceSelector:(SEL)newSelector {
-    id target = object_getClass(targetInstance);
+    id target = [targetInstance class];
     Method originalMethod = class_getInstanceMethod(target, originalSelector);
     Method newMethod = class_getInstanceMethod(target, newSelector);
     [self swizzle:target selector:originalSelector newSelector:newSelector originalMethod:originalMethod newMethod:newMethod];

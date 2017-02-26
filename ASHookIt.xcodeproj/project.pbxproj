@@ -14,6 +14,8 @@
 		6DCD89831E63676500F620D2 /* ASHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD89811E63676500F620D2 /* ASHook.m */; };
 		6DCD89861E63678B00F620D2 /* ASHook+MethodSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCD89841E63678B00F620D2 /* ASHook+MethodSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DCD89871E63678B00F620D2 /* ASHook+MethodSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD89851E63678B00F620D2 /* ASHook+MethodSwizzler.m */; };
+		6DCD898A1E636A2000F620D2 /* ASHook+BlockInsert.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCD89881E636A2000F620D2 /* ASHook+BlockInsert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DCD898B1E636A2000F620D2 /* ASHook+BlockInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCD89891E636A2000F620D2 /* ASHook+BlockInsert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		6DCD89811E63676500F620D2 /* ASHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHook.m; sourceTree = "<group>"; };
 		6DCD89841E63678B00F620D2 /* ASHook+MethodSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASHook+MethodSwizzler.h"; sourceTree = "<group>"; };
 		6DCD89851E63678B00F620D2 /* ASHook+MethodSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASHook+MethodSwizzler.m"; sourceTree = "<group>"; };
+		6DCD89881E636A2000F620D2 /* ASHook+BlockInsert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASHook+BlockInsert.h"; sourceTree = "<group>"; };
+		6DCD89891E636A2000F620D2 /* ASHook+BlockInsert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASHook+BlockInsert.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				6DCD89811E63676500F620D2 /* ASHook.m */,
 				6DCD89841E63678B00F620D2 /* ASHook+MethodSwizzler.h */,
 				6DCD89851E63678B00F620D2 /* ASHook+MethodSwizzler.m */,
+				6DCD89881E636A2000F620D2 /* ASHook+BlockInsert.h */,
+				6DCD89891E636A2000F620D2 /* ASHook+BlockInsert.m */,
 				6DCD892F1E63091F00F620D2 /* Info.plist */,
 			);
 			path = ASHookIt;
@@ -105,9 +111,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DCD893C1E63091F00F620D2 /* ASHookIt.h in Headers */,
 				6DCD89821E63676500F620D2 /* ASHook.h in Headers */,
 				6DCD89861E63678B00F620D2 /* ASHook+MethodSwizzler.h in Headers */,
-				6DCD893C1E63091F00F620D2 /* ASHookIt.h in Headers */,
+				6DCD898A1E636A2000F620D2 /* ASHook+BlockInsert.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DCD89871E63678B00F620D2 /* ASHook+MethodSwizzler.m in Sources */,
+				6DCD898B1E636A2000F620D2 /* ASHook+BlockInsert.m in Sources */,
 				6DCD89831E63676500F620D2 /* ASHook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
