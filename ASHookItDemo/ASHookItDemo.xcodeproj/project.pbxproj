@@ -31,6 +31,13 @@
 			remoteGlobalIDString = 6DCD89341E63091F00F620D2;
 			remoteInfo = ASHookItTests;
 		};
+		6DCD89781E6309DA00F620D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6DCD896B1E63098700F620D2 /* ASHookIt.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DCD892A1E63091F00F620D2;
+			remoteInfo = ASHookIt;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +133,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6DCD89791E6309DA00F620D2 /* PBXTargetDependency */,
 			);
 			name = ASHookItDemo;
 			productName = ASHookItDemo;
@@ -214,6 +222,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6DCD89791E6309DA00F620D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ASHookIt;
+			targetProxy = 6DCD89781E6309DA00F620D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6DCD895D1E63097200F620D2 /* Main.storyboard */ = {
@@ -366,6 +382,7 @@
 				6DCD896A1E63097200F620D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

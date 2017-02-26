@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import <ASHookIt/ASHookIt.h>
 
 @interface FirstViewController ()
 
@@ -14,16 +15,35 @@
 
 @implementation FirstViewController
 
+#pragma mark - Swizzling example 1
+
++ (void)initialize {
+    // A simple class method swizzling example.
+    [ASHook swizzle:self classSelector:@selector(alloc) withClassSelector:@selector(swizzledAlloc)];
+}
+
++ (instancetype)swizzledAlloc {
+    NSLog(@"Whoah! Swizzled allocation of this class is cool!");
+    return [super alloc];
+}
+
+#pragma mark - Swizzling example 2
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    // A simple instance method swizzling example.
+    [ASHook swizzle:self instanceSelector:@selector(logHelloWorld) withInstanceSelector:@selector(logGoodbyeWorld)];
+    
+    [self logHelloWorld];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)logGoodbyeWorld {
+    NSLog(@"Hello World!");
 }
 
+- (void)logHelloWorld {
+    NSLog(@"Goodbye World!");
+}
 
 @end
