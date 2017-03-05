@@ -13,7 +13,7 @@
 
 @interface ASHook ()
 
-+ (void)swizzle:(id)target
++ (void)swizzle:(id)swizzleTarget
        selector:(SEL)originalSelector
     newSelector:(SEL)newSelector
  originalMethod:(Method)originalMethod
@@ -25,23 +25,23 @@
 
 #pragma mark - Public methods
 
-+ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(id)targetInstance beforeInstanceSelector:(SEL)originalSelector {
-    id target = [targetInstance class];
-    Method originalMethod = class_getInstanceMethod(target, originalSelector);
-    SEL newSelector = [self insertBlock:block onTarget:target originalSelector:originalSelector originalMethod:originalMethod];
++ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(id)hookTarget beforeInstanceSelector:(SEL)hookSelector {
+    id target = [hookTarget class];
+    Method originalMethod = class_getInstanceMethod(target, hookSelector);
+    SEL newSelector = [self insertBlock:block onTarget:target originalSelector:hookSelector originalMethod:originalMethod];
     if (newSelector) {
         Method newMethod = class_getInstanceMethod(target, newSelector);
-        [ASHook swizzle:target selector:originalSelector newSelector:newSelector originalMethod:originalMethod newMethod:newMethod];
+        [ASHook swizzle:target selector:hookSelector newSelector:newSelector originalMethod:originalMethod newMethod:newMethod];
     }
 }
 
-+ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(id)targetClass beforeClassSelector:(SEL)originalSelector {
-    id target = object_getClass([targetClass class]);
-    Method originalMethod = class_getClassMethod(target, originalSelector);
-    SEL newSelector = [self insertBlock:block onTarget:target originalSelector:originalSelector originalMethod:originalMethod];
++ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(id)hookTarget beforeClassSelector:(SEL)hookSelector {
+    id target = object_getClass([hookTarget class]);
+    Method originalMethod = class_getClassMethod(target, hookSelector);
+    SEL newSelector = [self insertBlock:block onTarget:target originalSelector:hookSelector originalMethod:originalMethod];
     if (newSelector) {
         Method newMethod = class_getClassMethod(target, newSelector);
-        [ASHook swizzle:target selector:originalSelector newSelector:newSelector originalMethod:originalMethod newMethod:newMethod];
+        [ASHook swizzle:target selector:hookSelector newSelector:newSelector originalMethod:originalMethod newMethod:newMethod];
     }
 }
 

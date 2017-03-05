@@ -11,23 +11,23 @@
 @interface ASHook (MethodSwizzler)
 
 /**
- * Replaces the implementations of the two given selectors of an instance.
+ * Replaces the implementations of the two given instance selectors in a class object.
  *
- * @param targetInstance The instance where you want to replace selectors.
+ * @param swizzleTarget The target (instance or class) where you want to replace selectors.
  * @param originalSelector The original selector that is to be replaced.
  * @param newSelector The new selector will replace the original selector's implementation.
  *
  */
-+ (void)swizzle:(id)targetInstance instanceSelector:(SEL)originalSelector withInstanceSelector:(SEL)newSelector;
++ (void)swizzle:(id)swizzleTarget instanceSelector:(SEL)originalSelector withInstanceSelector:(SEL)newSelector;
 
 /**
- * Replaces the implementations of the two given selectors of a class.
+ * Replaces the implementations of the two given class selectors in a class object.
  *
- * @param targetClass The class where you want to replace selectors.
+ * @param swizzleTarget The target (instance or class) where you want to replace selectors.
  * @param originalSelector The original selector that is to be replaced.
  * @param newSelector The new selector will replace the original selector's implementation.
  *
  */
-+ (void)swizzle:(id)targetClass classSelector:(SEL)originalSelector withClassSelector:(SEL)newSelector;
++ (void)swizzle:(id)swizzleTarget classSelector:(SEL)originalSelector withClassSelector:(SEL)newSelector;
 
 @end
