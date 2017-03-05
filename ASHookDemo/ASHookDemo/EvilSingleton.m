@@ -19,6 +19,11 @@
     return sharedInstance;
 }
 
++ (instancetype)swizzledAlloc {
+    NSLog(@"Whoah! Swizzled allocation of this class is cool!");
+    return [super alloc];
+}
+
 - (void)shouldSingletonsBeUsedInAproject {
     NSLog(@"Yes");
 }

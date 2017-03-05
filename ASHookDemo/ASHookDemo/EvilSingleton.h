@@ -6,11 +6,12 @@
 //  Copyright © 2017. Adam Szedelyi. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 @interface EvilSingleton : NSObject
 
 + (instancetype)sharedInstance;
++ (instancetype)swizzledAlloc;
 
 - (void)shouldSingletonsBeUsedInAproject;
 - (void)printNever;

@@ -18,14 +18,34 @@
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    EvilSingleton *anotherOne = [[EvilSingleton alloc] init];
-    NSLog(@"Should I use singletons?");
-    [ASHook swizzle:anotherOne instanceSelector:@selector(shouldSingletonsBeUsedInAproject) withInstanceSelector:@selector(printNever)];
-    [anotherOne shouldSingletonsBeUsedInAproject];
++ (void)initialize {
+    // Example 1: simple instance method swizzling
+    [ASHook swizzle:self instanceSelector:@selector(logHelloWorld) withInstanceSelector:@selector(logGoodbyeWorld)];
     
-    NSLog(@"Should I use singletons?");
-    [[EvilSingleton sharedInstance] shouldSingletonsBeUsedInAproject];
+    // Example 2: class method swizzling
+    [ASHook swizzle:[EvilSingleton class] classSelector:@selector(alloc) withClassSelector:@selector(swizzledAlloc)];
+    
+    // Example 3: an instance method hook (before it runs) - the scope can be even all UIViewController objects
+    [ASHook runBlock:^(__unsafe_unretained id _self) {
+        NSLog(@"applicationDidFinishLaunching has been called on %@!", _self);
+    } onTarget:[AppDelegate class] beforeInstanceSelector:@selector(applicationDidFinishLaunching:)];
+    
+    // Example 4: a class method hook (before it runs)
+    [ASHook runBlock:^(__unsafe_unretained id _self) {
+        NSLog(@"alloc will run on %@ - will there be any funny messages in it?", _self);
+    } onTarget:[EvilSingleton class] beforeClassSelector:@selector(alloc)];
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)notification {
+    [self logHelloWorld];
+}
+
+- (void)logGoodbyeWorld {
+    NSLog(@"Hello World!");
+}
+
+- (void)logHelloWorld {
+    NSLog(@"Goodbye World!");
 }
 
 @end
