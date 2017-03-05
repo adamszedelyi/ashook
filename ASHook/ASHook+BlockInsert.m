@@ -13,7 +13,7 @@
 
 @interface ASHook ()
 
-+ (void)swizzle:(id)swizzleTarget
++ (void)swizzle:(Class)swizzleTarget
        selector:(SEL)originalSelector
     newSelector:(SEL)newSelector
  originalMethod:(Method)originalMethod
@@ -25,18 +25,19 @@
 
 #pragma mark - Public methods
 
-+ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(id)hookTarget beforeInstanceSelector:(SEL)hookSelector {
-    id target = [hookTarget class];
-    Method originalMethod = class_getInstanceMethod(target, hookSelector);
-    SEL newSelector = [self insertBlock:block onTarget:target originalSelector:hookSelector originalMethod:originalMethod];
++ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(Class)hookTarget beforeInstanceSelector:(SEL)hookSelector {
+    assert((hookTarget && hookTarget == [hookTarget class]) && "Plese use a class as the target.");
+    Method originalMethod = class_getInstanceMethod(hookTarget, hookSelector);
+    SEL newSelector = [self insertBlock:block onTarget:hookTarget originalSelector:hookSelector originalMethod:originalMethod];
     if (newSelector) {
-        Method newMethod = class_getInstanceMethod(target, newSelector);
-        [ASHook swizzle:target selector:hookSelector newSelector:newSelector originalMethod:originalMethod newMethod:newMethod];
+        Method newMethod = class_getInstanceMethod(hookTarget, newSelector);
+        [ASHook swizzle:hookTarget selector:hookSelector newSelector:newSelector originalMethod:originalMethod newMethod:newMethod];
     }
 }
 
-+ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(id)hookTarget beforeClassSelector:(SEL)hookSelector {
-    id target = object_getClass([hookTarget class]);
++ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(Class)hookTarget beforeClassSelector:(SEL)hookSelector {
+    assert((hookTarget && hookTarget == [hookTarget class]) && "Plese use a class as the target.");
+    id target = object_getClass(hookTarget);
     Method originalMethod = class_getClassMethod(target, hookSelector);
     SEL newSelector = [self insertBlock:block onTarget:target originalSelector:hookSelector originalMethod:originalMethod];
     if (newSelector) {
@@ -49,7 +50,7 @@
 
 /*! @brief Creating and adding a new implementation for the original method with the block included. */
 + (SEL)insertBlock:(void (^)(__unsafe_unretained id _self))block
-          onTarget:(id)target
+          onTarget:(Class)target
 originalSelector:(SEL)originalSelector
   originalMethod:(Method)originalMethod {
     NSString *swizzledMethodSuffix = @"_ASMethodSwizzled";

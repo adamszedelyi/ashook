@@ -14,20 +14,20 @@
  * Runs the given block on the target just before the given selector gets called.
  *
  * @param block The block that will run.
- * @param hookTarget The instance or class where the selector can be found.
+ * @param hookTarget The class object where the selector can be found.
  * @param hookSelector The original selector that will trigger the block.
  *
  */
-+ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(id)hookTarget beforeInstanceSelector:(SEL)hookSelector;
++ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(Class)hookTarget beforeInstanceSelector:(SEL)hookSelector;
 
 /**
  * Runs the given block on the target just before the given selector gets called.
  *
  * @param block The block that will run.
- * @param hookTarget The instance or class where the selector can be found.
+ * @param hookTarget The class object where the selector can be found.
  * @param hookSelector The original selector that will trigger the block.
  *
  */
-+ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(id)hookTarget beforeClassSelector:(SEL)hookSelector;
++ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(Class)hookTarget beforeClassSelector:(SEL)hookSelector;
 
 @end

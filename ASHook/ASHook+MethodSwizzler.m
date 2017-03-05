@@ -14,15 +14,16 @@
 
 #pragma mark - Public methods
 
-+ (void)swizzle:(id)swizzleTarget instanceSelector:(SEL)originalSelector withInstanceSelector:(SEL)newSelector {
-    id target = [swizzleTarget class];
-    Method originalMethod = class_getInstanceMethod(target, originalSelector);
-    Method newMethod = class_getInstanceMethod(target, newSelector);
-    [self swizzle:target selector:originalSelector newSelector:newSelector originalMethod:originalMethod newMethod:newMethod];
++ (void)swizzle:(Class)swizzleTarget instanceSelector:(SEL)originalSelector withInstanceSelector:(SEL)newSelector {
+    assert((swizzleTarget && swizzleTarget == [swizzleTarget class]) && "Plese use a class as the target.");
+    Method originalMethod = class_getInstanceMethod(swizzleTarget, originalSelector);
+    Method newMethod = class_getInstanceMethod(swizzleTarget, newSelector);
+    [self swizzle:swizzleTarget selector:originalSelector newSelector:newSelector originalMethod:originalMethod newMethod:newMethod];
 }
 
-+ (void)swizzle:(id)swizzleTarget classSelector:(SEL)originalSelector withClassSelector:(SEL)newSelector {
-    id target = object_getClass([swizzleTarget class]);
++ (void)swizzle:(Class)swizzleTarget classSelector:(SEL)originalSelector withClassSelector:(SEL)newSelector {
+    assert((swizzleTarget && swizzleTarget == [swizzleTarget class]) && "Plese use a class as the target.");
+    id target = object_getClass(swizzleTarget);
     Method originalMethod = class_getClassMethod(target, originalSelector);
     Method newMethod = class_getClassMethod(target, newSelector);
     [self swizzle:target selector:originalSelector newSelector:newSelector originalMethod:originalMethod newMethod:newMethod];
@@ -30,7 +31,7 @@
 
 #pragma mark - Private methods
 
-+ (void)swizzle:(id)target
++ (void)swizzle:(Class)target
        selector:(SEL)originalSelector
     newSelector:(SEL)newSelector
  originalMethod:(Method)originalMethod

@@ -34,6 +34,11 @@
     [ASHook runBlock:^(__unsafe_unretained id _self) {
         NSLog(@"alloc will run on %@ - will there be any funny messages in it?", _self);
     } onTarget:[EvilSingleton class] beforeClassSelector:@selector(alloc)];
+    
+    // Example 5: Lifecycle
+    [ASHook swizzle:[[EvilSingleton sharedInstance] class] instanceSelector:@selector(shouldSingletonsBeUsedInAproject) withInstanceSelector:@selector(printNever)];
+    NSLog(@"Should I use singletons?");
+    [[EvilSingleton sharedInstance] shouldSingletonsBeUsedInAproject];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
