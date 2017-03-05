@@ -36,7 +36,7 @@
 }
 
 + (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(id)targetClass beforeClassSelector:(SEL)originalSelector {
-    id target = object_getClass(targetClass);
+    id target = object_getClass([targetClass class]);
     Method originalMethod = class_getClassMethod(target, originalSelector);
     SEL newSelector = [self insertBlock:block onTarget:target originalSelector:originalSelector originalMethod:originalMethod];
     if (newSelector) {
