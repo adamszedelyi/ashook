@@ -7,8 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <ASHook/ASHook.h>
 
 @interface ASHookTests : XCTestCase
+
+@property (nonatomic, assign) BOOL classMethodCalled;
 
 @end
 
@@ -16,24 +19,37 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    _classMethodCalled = NO;
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+- (void)testSwizzleInstanceSelector {
+    XCTAssert([self two] - [self one] == 1, @"Two minus one equals one.");
+    [ASHook swizzle:self instanceSelector:@selector(one) withInstanceSelector:@selector(two)];
+    XCTAssert([self one] - [self two] == 1, @"One and two should've been replaced.");
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testHookClassSelector {
+    XCTAssert(self.classMethodCalled == NO, @"The class selector hasn't been called yet.");
+    __weak ASHookTests *weakSelf = self;
+    [ASHook runBlock:^(__unsafe_unretained id _self) {
+        weakSelf.classMethodCalled = YES;
+    } onTarget:self beforeClassSelector:@selector(aClassMethod)];
+    [self.class aClassMethod];
+    XCTAssert(self.classMethodCalled, @"The class selector has been called.");
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+#pragma mark - Private helpers
+
+- (NSUInteger)one {
+    return 1;
+}
+
+- (NSUInteger)two {
+    return 2;
+}
+
++ (void)aClassMethod {
+    // Body of a class method
 }
 
 @end
