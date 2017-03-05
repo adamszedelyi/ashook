@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/adamszedelyi/Develop/ASHookIt/ASHookIt/ASHookItDemo/ASHookDemo.xcodeproj">
+      location = "self:ASHookDemo.xcodeproj">
    </FileRef>
 </Workspace>
