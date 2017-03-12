@@ -18,10 +18,7 @@
  * @param failureHandler If the rule is broken the failure handler will run.
  *
  */
-+ (void)startObservingAllocationsOnClass:(Class)target maxAllocations:(NSUInteger)maxAllocations failureHandler:(void (^)())failureHandler;
-
-/*! @brief Stops observing the allocations of the specified class object. */
-+ (void)stopObservingAllocationsOnClass:(Class)target;
++ (void)startObservingAllocationsOnClass:(Class)target maxAllocations:(NSUInteger)maxAllocations failureHandler:(void (^)(__unsafe_unretained id _self))failureHandler;
 
 /**
  * Starts observing the count of living instances on the specified class object.
@@ -31,9 +28,6 @@
  * @param failureHandler If the rule is broken the failure handler will run.
  *
  */
-+ (void)startObservingInstanceCountOnClass:(Class)target maxInstanceCount:(NSUInteger)maxInstanceCount failureHandler:(void (^)())failureHandler;
-
-/*! @brief Stops observing the count of instances of the specified class object. */
-+ (void)stopObservingInstanceCountOnClass:(Class)target;
++ (void)startObservingInstanceCountOnClass:(Class)target maxInstanceCount:(NSUInteger)maxInstanceCount failureHandler:(void (^)(__unsafe_unretained id _self))failureHandler;
 
 @end

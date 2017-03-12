@@ -11,9 +11,5 @@
 @interface EvilSingleton : NSObject
 
 + (instancetype)sharedInstance;
-+ (instancetype)swizzledAlloc;
-
-- (void)shouldSingletonsBeUsedInAproject;
-- (void)printNever;
 
 @end

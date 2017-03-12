@@ -19,17 +19,4 @@
     return sharedInstance;
 }
 
-+ (instancetype)swizzledAlloc {
-    NSLog(@"Whoah! Swizzled allocation of %@ is cool!", NSStringFromClass([self class]));
-    return [super alloc];
-}
-
-- (void)shouldSingletonsBeUsedInAproject {
-    NSLog(@"Yes");
-}
-
-- (void)printNever {
-    NSLog(@"Never");
-}
-
 @end

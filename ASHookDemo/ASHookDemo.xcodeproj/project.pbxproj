@@ -13,6 +13,7 @@
 		6D325DBB1E6C51FF0001B5D8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D325DB91E6C51FF0001B5D8 /* MainMenu.xib */; };
 		6D325DD81E6C52B10001B5D8 /* EvilSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D325DD71E6C52B10001B5D8 /* EvilSingleton.m */; };
 		6D325DDA1E6C54370001B5D8 /* ASHook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D325DD01E6C52190001B5D8 /* ASHook.framework */; };
+		6D3AB50F1E760A8D00056869 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AB50E1E760A8D00056869 /* ExampleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		6D325DC21E6C52170001B5D8 /* ASHook.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ASHook.xcodeproj; path = ../ASHook.xcodeproj; sourceTree = "<group>"; };
 		6D325DD61E6C52B10001B5D8 /* EvilSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvilSingleton.h; sourceTree = "<group>"; };
 		6D325DD71E6C52B10001B5D8 /* EvilSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvilSingleton.m; sourceTree = "<group>"; };
+		6D3AB50D1E760A8D00056869 /* ExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleViewController.h; sourceTree = "<group>"; };
+		6D3AB50E1E760A8D00056869 /* ExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				6D325DB21E6C51FF0001B5D8 /* AppDelegate.m */,
 				6D325DD61E6C52B10001B5D8 /* EvilSingleton.h */,
 				6D325DD71E6C52B10001B5D8 /* EvilSingleton.m */,
+				6D3AB50D1E760A8D00056869 /* ExampleViewController.h */,
+				6D3AB50E1E760A8D00056869 /* ExampleViewController.m */,
 				6D325DB71E6C51FF0001B5D8 /* Assets.xcassets */,
 				6D325DB91E6C51FF0001B5D8 /* MainMenu.xib */,
 				6D325DBC1E6C51FF0001B5D8 /* Info.plist */,
@@ -208,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D325DB61E6C51FF0001B5D8 /* main.m in Sources */,
+				6D3AB50F1E760A8D00056869 /* ExampleViewController.m in Sources */,
 				6D325DD81E6C52B10001B5D8 /* EvilSingleton.m in Sources */,
 				6D325DB31E6C51FF0001B5D8 /* AppDelegate.m in Sources */,
 			);
