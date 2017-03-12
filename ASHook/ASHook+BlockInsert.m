@@ -55,7 +55,7 @@ originalSelector:(SEL)originalSelector
   originalMethod:(Method)originalMethod {
     NSString *swizzledMethodSuffix = @"_ASMethodSwizzled";
     NSString *swizzledMethodName = [NSString stringWithFormat:@"%@%@", NSStringFromSelector(originalSelector), swizzledMethodSuffix];
-    SEL newSelector = NSSelectorFromString(swizzledMethodName);
+    SEL newSelector = [self selectorToSwizzleWithName:swizzledMethodName onTarget:target];
     id actionBlock = ^(__unsafe_unretained id _self) {
         if (block != nil) {
             block(_self);
@@ -67,6 +67,18 @@ originalSelector:(SEL)originalSelector
     if (!class_addMethod(target, newSelector, impl, encoding)) {
         NSLog(@"Failed to add method: %@ on %@", NSStringFromSelector(newSelector), target);
         return nil;
+    }
+    return newSelector;
+}
+
+/*! @brief Creating a unique named selector for the original method - handling the case where multiple hook requests are received on the same method. */
++ (SEL)selectorToSwizzleWithName:(NSString *)swizzledMethodName onTarget:(Class)target {
+    SEL newSelector = NSSelectorFromString(swizzledMethodName);
+    NSUInteger retries = 0;
+    while (class_respondsToSelector(target, newSelector) && retries < 100) { // There's already a selector with the swizzled name - create a new one
+        NSString *suffixedSwizzledMethodName = [NSString stringWithFormat:@"%@%u", swizzledMethodName, arc4random_uniform(INT_MAX)];
+        newSelector = NSSelectorFromString(suffixedSwizzledMethodName);
+        retries++;
     }
     return newSelector;
 }
