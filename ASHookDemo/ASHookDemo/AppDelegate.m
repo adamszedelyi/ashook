@@ -56,6 +56,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
     [self logHelloWorld];
+    NSLog(@"%ld + %ld = %ld", [self.class one], [self.class one], [self.class two]);
 }
 
 #pragma mark - Meaningless example methods
