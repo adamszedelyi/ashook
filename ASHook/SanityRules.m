@@ -13,17 +13,12 @@ static NSMutableDictionary<NSString *, NSNumber *> *asHookInstanceCount;
 
 @implementation SanityRules
 
-+ (void)initialize {
-    asHookAllocations = [NSMutableDictionary new];
-    asHookInstanceCount = [NSMutableDictionary new];
-}
-
 + (NSMutableDictionary<NSString *, NSNumber *> *)allocations {
-    return asHookAllocations;
+    return asHookAllocations ? asHookAllocations : [NSMutableDictionary new];
 }
 
 + (NSMutableDictionary<NSString *, NSNumber *> *)instanceCount {
-    return asHookInstanceCount;
+    return asHookInstanceCount ? asHookInstanceCount : [NSMutableDictionary new];
 }
 
 @end

@@ -46,7 +46,7 @@
     
     // Example 6: Observing count of living instances of a class
     [ASHook startObservingInstanceCountOnClass:[ExampleViewController class] maxInstanceCount:5 failureHandler:^(__unsafe_unretained id _self) {
-        NSLog(@"Yikes! %@ has more than 5 instances!", _self);
+        NSLog(@"Yikes! %@ has more than 5 instances concurrently!", _self);
     }];
     
     NSMutableSet *viewControllers = [NSMutableSet setWithObjects:[ExampleViewController new], [ExampleViewController new], [ExampleViewController new], [ExampleViewController new], [ExampleViewController new], nil]; // Good so far: 5 instances are living
