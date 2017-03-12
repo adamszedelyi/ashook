@@ -20,7 +20,7 @@
 }
 
 + (instancetype)swizzledAlloc {
-    NSLog(@"Whoah! Swizzled allocation of this class is cool!");
+    NSLog(@"Whoah! Swizzled allocation of %@ is cool!", NSStringFromClass([self class]));
     return [super alloc];
 }
 

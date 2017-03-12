@@ -26,14 +26,14 @@
     [ASHook swizzle:[EvilSingleton class] classSelector:@selector(alloc) withClassSelector:@selector(swizzledAlloc)];
     
     // Example 3: an instance method hook (before it runs) - the scope can be even all UIViewController objects
-    [ASHook runBlock:^(__unsafe_unretained id _self) {
-        NSLog(@"applicationDidFinishLaunching has been called on %@!", _self);
-    } onTarget:[AppDelegate class] beforeInstanceSelector:@selector(applicationDidFinishLaunching:)];
+    [ASHook hookTarget:[AppDelegate class] instanceSelector:@selector(applicationDidFinishLaunching:) block:^(__unsafe_unretained id _self) {
+        NSLog(@"applicationDidFinishLaunching has been called on %@!", NSStringFromClass([_self class]));
+    }];
     
     // Example 4: a class method hook (before it runs)
-    [ASHook runBlock:^(__unsafe_unretained id _self) {
-        NSLog(@"alloc will run on %@ - will there be any funny messages in it?", _self);
-    } onTarget:[EvilSingleton class] beforeClassSelector:@selector(alloc)];
+    [ASHook hookTarget:[EvilSingleton class] classSelector:@selector(alloc) block:^(__unsafe_unretained id _self) {
+        NSLog(@"alloc will run on %@ - will there be any funny messages in it?", NSStringFromClass([_self class]));
+    }];
     
     // Example 5: Lifecycle
     [ASHook swizzle:[[EvilSingleton sharedInstance] class] instanceSelector:@selector(shouldSingletonsBeUsedInAproject) withInstanceSelector:@selector(printNever)];

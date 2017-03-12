@@ -25,34 +25,48 @@
 
 #pragma mark - Public methods
 
-+ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(Class)hookTarget beforeInstanceSelector:(SEL)hookSelector {
++ (void)hookTarget:(Class)hookTarget instanceSelector:(SEL)hookSelector block:(void (^)(__unsafe_unretained id _self))block {
     assert((hookTarget && hookTarget == [hookTarget class]) && "Plese use a class as the target.");
     Method originalMethod = class_getInstanceMethod(hookTarget, hookSelector);
-    SEL newSelector = [self insertBlock:block onTarget:hookTarget originalSelector:hookSelector originalMethod:originalMethod];
+    SEL newSelector = [self extendTarget:hookTarget
+                        originalSelector:hookSelector
+                          originalMethod:originalMethod
+                               withBlock:block];
     if (newSelector) {
         Method newMethod = class_getInstanceMethod(hookTarget, newSelector);
-        [ASHook swizzle:hookTarget selector:hookSelector newSelector:newSelector originalMethod:originalMethod newMethod:newMethod];
+        [ASHook swizzle:hookTarget
+               selector:hookSelector
+            newSelector:newSelector
+         originalMethod:originalMethod
+              newMethod:newMethod];
     }
 }
 
-+ (void)runBlock:(void (^)(__unsafe_unretained id _self))block onTarget:(Class)hookTarget beforeClassSelector:(SEL)hookSelector {
++ (void)hookTarget:(Class)hookTarget classSelector:(SEL)hookSelector block:(void (^)(__unsafe_unretained id _self))block {
     assert((hookTarget && hookTarget == [hookTarget class]) && "Plese use a class as the target.");
     id target = object_getClass(hookTarget);
     Method originalMethod = class_getClassMethod(target, hookSelector);
-    SEL newSelector = [self insertBlock:block onTarget:target originalSelector:hookSelector originalMethod:originalMethod];
+    SEL newSelector = [self extendTarget:target
+                        originalSelector:hookSelector
+                          originalMethod:originalMethod
+                               withBlock:block];
     if (newSelector) {
         Method newMethod = class_getClassMethod(target, newSelector);
-        [ASHook swizzle:target selector:hookSelector newSelector:newSelector originalMethod:originalMethod newMethod:newMethod];
+        [ASHook swizzle:target
+               selector:hookSelector
+            newSelector:newSelector
+         originalMethod:originalMethod
+              newMethod:newMethod];
     }
 }
 
 #pragma mark - Private methods
 
 /*! @brief Creating and adding a new implementation for the original method with the block included. */
-+ (SEL)insertBlock:(void (^)(__unsafe_unretained id _self))block
-          onTarget:(Class)target
-originalSelector:(SEL)originalSelector
-  originalMethod:(Method)originalMethod {
++ (SEL)extendTarget:(Class)target
+   originalSelector:(SEL)originalSelector
+     originalMethod:(Method)originalMethod
+          withBlock:(void (^)(__unsafe_unretained id _self))block {
     NSString *swizzledMethodSuffix = @"_ASMethodSwizzled";
     NSString *swizzledMethodName = [NSString stringWithFormat:@"%@%@", NSStringFromSelector(originalSelector), swizzledMethodSuffix];
     SEL newSelector = [self selectorToSwizzleWithName:swizzledMethodName onTarget:target];
