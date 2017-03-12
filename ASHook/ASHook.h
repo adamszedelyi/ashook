@@ -10,6 +10,7 @@
 #import <ASHook/ASHookBase.h>
 #import <ASHook/ASHook+MethodSwizzler.h>
 #import <ASHook/ASHook+BlockInsert.h>
+#import <ASHook/ASHook+RuleManager.h>
 
 //! Project version number for ASHook.
 FOUNDATION_EXPORT double ASHookVersionNumber;

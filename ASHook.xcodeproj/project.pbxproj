@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D3AB5071E75F66E00056869 /* ASHook+RuleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D3AB5051E75F66E00056869 /* ASHook+RuleManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D3AB5081E75F66E00056869 /* ASHook+RuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AB5061E75F66E00056869 /* ASHook+RuleManager.m */; };
 		6D7DA68D1E63A18F00C587EF /* ASHookBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D7DA68B1E63A18F00C587EF /* ASHookBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D7DA68E1E63A18F00C587EF /* ASHookBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7DA68C1E63A18F00C587EF /* ASHookBase.m */; };
 		6DCD89351E63091F00F620D2 /* ASHook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCD892B1E63091F00F620D2 /* ASHook.framework */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D3AB5051E75F66E00056869 /* ASHook+RuleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASHook+RuleManager.h"; sourceTree = "<group>"; };
+		6D3AB5061E75F66E00056869 /* ASHook+RuleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASHook+RuleManager.m"; sourceTree = "<group>"; };
 		6D7DA68B1E63A18F00C587EF /* ASHookBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHookBase.h; sourceTree = "<group>"; };
 		6D7DA68C1E63A18F00C587EF /* ASHookBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHookBase.m; sourceTree = "<group>"; };
 		6DCD892B1E63091F00F620D2 /* ASHook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASHook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +94,8 @@
 				6DCD89851E63678B00F620D2 /* ASHook+MethodSwizzler.m */,
 				6DCD89881E636A2000F620D2 /* ASHook+BlockInsert.h */,
 				6DCD89891E636A2000F620D2 /* ASHook+BlockInsert.m */,
+				6D3AB5051E75F66E00056869 /* ASHook+RuleManager.h */,
+				6D3AB5061E75F66E00056869 /* ASHook+RuleManager.m */,
 				6DCD892F1E63091F00F620D2 /* Info.plist */,
 			);
 			path = ASHook;
@@ -112,9 +118,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DCD89821E63676500F620D2 /* ASHook.h in Headers */,
-				6DCD89861E63678B00F620D2 /* ASHook+MethodSwizzler.h in Headers */,
 				6D7DA68D1E63A18F00C587EF /* ASHookBase.h in Headers */,
+				6DCD89861E63678B00F620D2 /* ASHook+MethodSwizzler.h in Headers */,
 				6DCD898A1E636A2000F620D2 /* ASHook+BlockInsert.h in Headers */,
+				6D3AB5071E75F66E00056869 /* ASHook+RuleManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D3AB5081E75F66E00056869 /* ASHook+RuleManager.m in Sources */,
 				6DCD89871E63678B00F620D2 /* ASHook+MethodSwizzler.m in Sources */,
 				6DCD898B1E636A2000F620D2 /* ASHook+BlockInsert.m in Sources */,
 				6D7DA68E1E63A18F00C587EF /* ASHookBase.m in Sources */,
