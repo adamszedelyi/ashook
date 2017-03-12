@@ -24,7 +24,7 @@
 
 - (void)testSwizzleInstanceSelector {
     XCTAssert([self two] - [self one] == 1, @"Two minus one equals one.");
-    [ASHook swizzle:self instanceSelector:@selector(one) withInstanceSelector:@selector(two)];
+    [ASHook swizzle:[self class] instanceSelector:@selector(one) withInstanceSelector:@selector(two)];
     XCTAssert([self one] - [self two] == 1, @"One and two should've been replaced.");
 }
 
@@ -33,9 +33,23 @@
     __weak ASHookTests *weakSelf = self;
     [ASHook runBlock:^(__unsafe_unretained id _self) {
         weakSelf.classMethodCalled = YES;
-    } onTarget:self beforeClassSelector:@selector(aClassMethod)];
+    } onTarget:[self class] beforeClassSelector:@selector(aClassMethod)];
     [self.class aClassMethod];
     XCTAssert(self.classMethodCalled, @"The class selector has been called.");
+}
+
+- (void)testMultipleHooksOnTheSameMethod {
+    __block NSUInteger sum = 0;
+    __weak ASHookTests *weakSelf = self;
+    [ASHook runBlock:^(__unsafe_unretained id _self) {
+        sum += [weakSelf one];
+    } onTarget:[self class] beforeClassSelector:@selector(aClassMethod)];
+    
+    [ASHook runBlock:^(__unsafe_unretained id _self) {
+        sum += [weakSelf two];
+    } onTarget:[self class] beforeClassSelector:@selector(aClassMethod)];
+    [self.class aClassMethod];
+    XCTAssert(sum == 3, @"Multiple hooks don't work terribly well on the same method.");
 }
 
 #pragma mark - Private helpers
