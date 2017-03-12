@@ -41,7 +41,7 @@
         NSLog(@"Yikes! The singleton has been allocated more than once!");
     }];
     
-    [EvilSingleton sharedInstance]; // Designated singleton accessor
+    [EvilSingleton sharedInstance]; // Using the designated singleton accessor: one allocation
     (void)[[EvilSingleton alloc] init]; // Allocating the singleton by mistake
     
     // Example 6: Observing count of living instances of a class
@@ -57,6 +57,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
     [self logHelloWorld];
 }
+
+#pragma mark - Meaningless example methods
 
 - (void)logGoodbyeWorld {
     NSLog(@"Hello World!");
